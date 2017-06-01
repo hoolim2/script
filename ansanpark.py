@@ -196,7 +196,7 @@ def SearchFacilityLibrary():
     keyword = InputLabel.get()
     print("TextBox :",keyword)
     for i in range(0, len(PARK_SPORTS_FACLT_DTLS)):
-        if ( PARK_SPORTS_FACLT_DTLS[i].find(keyword) != -1):
+        if ( PARK_SPORTS_FACLT_DTLS[i].find(keyword)&PARK_AMSMT_FACLT_DTLS[i].find(keyword)&PARK_CNVNC_FACLT_DTLS[i].find(keyword) != -1):
             RenderText.insert(INSERT, "\n-------------------------------------------\n")
             RenderText.insert(INSERT, "PARK_DIV_NM : " + PARK_DIV_NM[i] + "\n")
             RenderText.insert(INSERT, "MANAGE_NO : " + MANAGE_NO[i]+ "\n")
