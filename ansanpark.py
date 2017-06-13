@@ -9,6 +9,8 @@ from email.mime.text import MIMEText
 from xml.dom.minidom import *
 from tkinter import *
 from tkinter import font
+import tkinter
+import tkinter.messagebox
 
 #메일-----------------------------
 global sendMailContent
@@ -114,7 +116,7 @@ def InitRightFindButton():
     TempFont = font.Font(g_Tk, size=12, weight='bold', family = 'Consolas')
     rFindButton = Button(g_Tk,bg="#48d1cc",fg='white',relief='flat',padx=5, text="▶",  command=rightIndexButtonAction)
     rFindButton.pack()
-    rFindButton.place(x=250, y=510)
+    rFindButton.place(x=260, y=510)
 
 def InitLeftFindButton():
     TempFont = font.Font(g_Tk, size=12, weight='bold', family = 'Consolas')
@@ -157,7 +159,6 @@ labelframe.pack()
 labelframe.place(x=10, y=110)
 
 bg1 = Canvas ( g_Tk, bg='#48d1cc',height=10, width=365)
-#bg1.pack()
 bg1.place(x=30, y=130)
 
 def monitorLabel():
@@ -177,6 +178,7 @@ def SendButtonAction():
     rid = recvidLabel.get()
     sendMailContent = searchIndex[searchIndexNum]
     sendMail(sid, spw, rid, "공원정보입니다.", sendMailContent)
+    tkinter.messagebox.showinfo("알림", "발송완료")
 
 def SearchButtonAction():
     global SearchListBox
@@ -289,7 +291,6 @@ def SearchAddressLibrary():
                                    + "관리 전화번호 : " + MANAGE_INST_TELNO[i] + "\n"
                                    + "-------------------------------------------\n"))
     RenderText.insert(INSERT, searchIndex[searchIndexNum])
-
 
 InitTopText()
 InitKeyword_InputLabel()
