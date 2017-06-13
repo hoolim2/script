@@ -70,6 +70,25 @@ def InitTopText():
     MainText.pack()
     MainText.place(x=40)
 
+#def InitSearchListBox():
+#    global SearchListBox
+#    ListBoxScrollbar = Scrollbar(g_Tk)
+#    ListBoxScrollbar.pack()
+#    ListBoxScrollbar.place(x=135, y=50)
+
+#    TempFont = font.Font(g_Tk, size=15, weight='bold', family='Consolas')
+#    SearchListBox = Listbox(g_Tk, font=TempFont, activestyle='none',
+#                            width=9, height=1, borderwidth=12, relief='ridge',
+#                            yscrollcommand = ListBoxScrollbar.set)
+
+#    SearchListBox.insert(1, "공원 이름")
+#    SearchListBox.insert(2, "시설명")
+#    SearchListBox.insert(3, "주소")
+#    SearchListBox.pack()
+#    SearchListBox.place(x=10, y=50)
+
+#    ListBoxScrollbar.config(command=SearchListBox.yview)
+
 def InitKeyword_InputLabel():
     global InputLabel
     TempFont = font.Font(g_Tk, size=14, weight='bold', family = 'Consolas')
@@ -176,7 +195,7 @@ def SendButtonAction():
     spw = sendpwLabel.get()
     rid = recvidLabel.get()
     sendMailContent = searchIndex[searchIndexNum]
-    sendMail(sid, spw, rid, "공원정보입니다.", sendMailContent)
+    sendMail(sid, spw, rid, "Test", sendMailContent)
 
 def SearchButtonAction():
     global SearchListBox
